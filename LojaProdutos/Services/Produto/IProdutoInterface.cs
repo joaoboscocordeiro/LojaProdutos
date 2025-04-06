@@ -9,5 +9,6 @@ namespace LojaProdutos.Services.Produto
         Task<ProdutoModel> Cadastar(CriarProdutoDto criarProdutoDto, IFormFile foto);
         Task<ProdutoModel> BuscarProdutoPorId(int id);
         Task<ProdutoModel> Editar(EditarProdutoDto editarProdutoDto, IFormFile foto);
+        Task<ProdutoModel> Remover(int id);
     }
 }
