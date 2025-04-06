@@ -1,8 +1,5 @@
 using LojaProdutos.Data;
-<<<<<<< HEAD
 using LojaProdutos.Services.Categoria;
-=======
->>>>>>> 6bf09e7b0729bf24deb5b7330c89a94496998304
 using LojaProdutos.Services.Produto;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,10 +12,7 @@ builder.Services.AddDbContext<DataContext>(options =>
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
 builder.Services.AddScoped<IProdutoInterface, ProdutoService>();
-<<<<<<< HEAD
 builder.Services.AddScoped<ICategoriaInterface, CategoriaService>();
-=======
->>>>>>> 6bf09e7b0729bf24deb5b7330c89a94496998304
 
 var app = builder.Build();
 

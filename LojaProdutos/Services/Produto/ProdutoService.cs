@@ -1,8 +1,5 @@
 ﻿using LojaProdutos.Data;
-<<<<<<< HEAD
 using LojaProdutos.Dtos.Produto;
-=======
->>>>>>> 6bf09e7b0729bf24deb5b7330c89a94496998304
 using LojaProdutos.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,7 +8,6 @@ namespace LojaProdutos.Services.Produto
     public class ProdutoService : IProdutoInterface
     {
         private readonly DataContext _context;
-<<<<<<< HEAD
         private readonly string _sistema;
         public ProdutoService(DataContext context, IWebHostEnvironment sistema)
         {
@@ -30,11 +26,10 @@ namespace LojaProdutos.Services.Produto
             {
                 throw new Exception(ex.Message);
             }
-=======
+        }
         public ProdutoService(DataContext context)
         {
             _context = context;
->>>>>>> 6bf09e7b0729bf24deb5b7330c89a94496998304
         }
 
         public async Task<List<ProdutoModel>> BuscarProdutos()
@@ -48,7 +43,6 @@ namespace LojaProdutos.Services.Produto
                 throw new Exception(ex.Message);
             }
         }
-<<<<<<< HEAD
 
         public async Task<ProdutoModel> Cadastar(CriarProdutoDto criarProdutoDto, IFormFile foto)
         {
@@ -153,7 +147,5 @@ namespace LojaProdutos.Services.Produto
 
             return nomeCaminhoImage;
         }
-=======
->>>>>>> 6bf09e7b0729bf24deb5b7330c89a94496998304
     }
 }
