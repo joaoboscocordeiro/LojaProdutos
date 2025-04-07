@@ -15,6 +15,11 @@ namespace LojaProdutos.Services.Produto
             _sistema = sistema.WebRootPath;
         }
 
+        public ProdutoService(DataContext context)
+        {
+            _context = context;
+        }
+
         public async Task<ProdutoModel> BuscarProdutoPorId(int id)
         {
             try
@@ -27,16 +32,29 @@ namespace LojaProdutos.Services.Produto
                 throw new Exception(ex.Message);
             }
         }
-        public ProdutoService(DataContext context)
-        {
-            _context = context;
-        }
 
         public async Task<List<ProdutoModel>> BuscarProdutos()
         {
             try
             {
                 return await _context.Produtos.Include(c => c.Categoria).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<List<ProdutoModel>> BuscarProdutoFiltro(string? pesquisar)
+        {
+            try
+            {
+                var produtos = await _context.Produtos
+                    .Include(x => x.Categoria)
+                    .Where(p => p.Nome.Contains(pesquisar) || p.Marca.Contains(pesquisar))
+                    .ToListAsync();
+
+                return produtos;
             }
             catch (Exception ex)
             {
