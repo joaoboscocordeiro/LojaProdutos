@@ -1,4 +1,9 @@
 ﻿$(document).ready(function () {
+    setTimeout(function () {
+        $(".alert").fadeOut("slow", function () {
+            $(this).alert("close")
+        })
+    }, 4000)
 
     $('#registros').DataTable({
         "ordering": true,
@@ -27,11 +32,5 @@
                 "sSortDescending": ": Ordenar colunas de forma descendente"
             }
         }
-    });​
-
-    setTimeout(function () {
-        $(".alert").fadeOut("slow", function () {
-            $(this).alert("close")
-        })
-    }, 4000)
+    });
 });
