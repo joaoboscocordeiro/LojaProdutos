@@ -13,7 +13,8 @@ namespace LojaProdutos.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var registros = _estoqueInterface.ListarRegistros();
+            return View(registros);
         }
 
         [HttpPost]
