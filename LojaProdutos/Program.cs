@@ -1,4 +1,5 @@
 using LojaProdutos.Data;
+using LojaProdutos.Services.Autenticacao;
 using LojaProdutos.Services.Categoria;
 using LojaProdutos.Services.Estoque;
 using LojaProdutos.Services.Produto;
@@ -17,6 +18,7 @@ builder.Services.AddScoped<IProdutoInterface, ProdutoService>();
 builder.Services.AddScoped<ICategoriaInterface, CategoriaService>();
 builder.Services.AddScoped<IEstoqueInterface, EstoqueService>();
 builder.Services.AddScoped<IUsuarioInterface, UsuarioService>();
+builder.Services.AddScoped<IAutenticacaoInterface, AutenticacaoService>();
 
 var app = builder.Build();
 
