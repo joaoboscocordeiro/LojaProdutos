@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8E2kF3bgqXk=",
+  "dgSpecHash": "glvxS7Ki2ZE=",
   "success": true,
   "projectFilePath": "F:\\Projetos\\C#\\LojaProdutos\\LojaProdutos\\LojaProdutos.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Junior\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Junior\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Junior\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\Junior\\.nuget\\packages\\closedxml\\0.104.2\\closedxml.0.104.2.nupkg.sha512",
