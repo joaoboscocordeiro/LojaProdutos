@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using LojaProdutos.Data;
+using LojaProdutos.Dtos.Login;
 using LojaProdutos.Dtos.Usuario;
 using LojaProdutos.Models;
 using LojaProdutos.Services.Autenticacao;
@@ -102,6 +103,29 @@ namespace LojaProdutos.Services.Usuario
                 await _context.SaveChangesAsync();
 
                 return usuarioBanco;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<UsuarioModel> Login(LoginUsuarioDto loginUsuarioDto)
+        {
+            try
+            {
+                var usuarioBanco = await _context.Usuarios.Include(e => e.Endereco).FirstOrDefaultAsync(x => x.Email == loginUsuarioDto.Email);
+
+                if (usuarioBanco == null)
+                {
+                    return null;
+                }
+                if (!_autenticacaoInterface.VerificaLogin(loginUsuarioDto.Senha, usuarioBanco.SenhaHash, usuarioBanco.SenhaSalt))
+                {
+                    return null;
+                }
+
+                // Criar Sessão
             }
             catch (Exception ex)
             {
