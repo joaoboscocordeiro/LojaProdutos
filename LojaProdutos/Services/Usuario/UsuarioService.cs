@@ -4,6 +4,7 @@ using LojaProdutos.Dtos.Login;
 using LojaProdutos.Dtos.Usuario;
 using LojaProdutos.Models;
 using LojaProdutos.Services.Autenticacao;
+using LojaProdutos.Services.Sessao;
 using Microsoft.EntityFrameworkCore;
 
 namespace LojaProdutos.Services.Usuario
@@ -13,12 +14,19 @@ namespace LojaProdutos.Services.Usuario
         private readonly DataContext _context;
         private readonly IAutenticacaoInterface _autenticacaoInterface;
         private readonly IMapper _mapper;
+        private readonly ISessaoInterface _sessaoInterface;
 
-        public UsuarioService(DataContext context, IAutenticacaoInterface autenticacaoInterface, IMapper mapper)
+        public UsuarioService(
+            DataContext context, 
+            IAutenticacaoInterface autenticacaoInterface, 
+            IMapper mapper,
+            ISessaoInterface sessaoInterface
+            )
         {
             _context = context;
             _autenticacaoInterface = autenticacaoInterface;
             _mapper = mapper;
+            _sessaoInterface = sessaoInterface;
         }
         public async Task<UsuarioModel> BuscarUsuarioPorId(int id)
         {
@@ -114,7 +122,7 @@ namespace LojaProdutos.Services.Usuario
         {
             try
             {
-                var usuarioBanco = await _context.Usuarios.Include(e => e.Endereco).FirstOrDefaultAsync(x => x.Email == loginUsuarioDto.Email);
+                var usuarioBanco = await _context.Usuarios.FirstOrDefaultAsync(x => x.Email == loginUsuarioDto.Email);
 
                 if (usuarioBanco == null)
                 {
@@ -126,6 +134,9 @@ namespace LojaProdutos.Services.Usuario
                 }
 
                 // Criar Sessão
+                _sessaoInterface.CriarSessao(usuarioBanco);
+
+                return usuarioBanco;
             }
             catch (Exception ex)
             {
