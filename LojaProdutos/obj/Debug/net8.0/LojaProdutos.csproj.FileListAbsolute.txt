@@ -294,6 +294,7 @@ F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\refs\System.Xml.XmlSer
 F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\refs\System.Xml.XPath.dll
 F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\refs\System.Xml.XPath.XDocument.dll
 F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\refs\WindowsBase.dll
+F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\AutoMapper.dll
 F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\Azure.Core.dll
 F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\Azure.Identity.dll
 F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\ClosedXML.dll
@@ -343,6 +344,7 @@ F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\Microsoft.IdentityMode
 F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\Mono.TextTemplating.dll
+F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\Newtonsoft.Json.dll
 F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\RBush.dll
 F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\SixLabors.Fonts.dll
 F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\SQLitePCLRaw.core.dll
@@ -471,4 +473,3 @@ F:\Projetos\C#\LojaProdutos\LojaProdutos\obj\Debug\net8.0\refint\LojaProdutos.dl
 F:\Projetos\C#\LojaProdutos\LojaProdutos\obj\Debug\net8.0\LojaProdutos.pdb
 F:\Projetos\C#\LojaProdutos\LojaProdutos\obj\Debug\net8.0\LojaProdutos.genruntimeconfig.cache
 F:\Projetos\C#\LojaProdutos\LojaProdutos\obj\Debug\net8.0\ref\LojaProdutos.dll
-F:\Projetos\C#\LojaProdutos\LojaProdutos\bin\Debug\net8.0\AutoMapper.dll
