@@ -16,5 +16,7 @@ Aplicação de Loja Produtos
 <div align-"center">
   <img src="https://github.com/user-attachments/assets/1a3a97ce-0f08-4113-acee-e8b82bc397a6" width="700px" />
 </div>
-
+<div align-"center">
+  <img src="https://github.com/user-attachments/assets/a9420118-9818-468b-9a1e-b0c862145d88" width="700px" />
+</div>
 
