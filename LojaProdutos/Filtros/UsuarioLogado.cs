@@ -23,7 +23,7 @@ namespace LojaProdutos.Filtros
             {
                 UsuarioModel usuarioModel = JsonConvert.DeserializeObject<UsuarioModel>(sessao);
 
-                if (usuarioModel != null)
+                if (usuarioModel == null)
                 {
                     context.Result = new RedirectToRouteResult(new RouteValueDictionary
                     {
