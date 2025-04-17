@@ -1,10 +1,12 @@
 ﻿using LojaProdutos.Dtos.Produto;
+using LojaProdutos.Filtros;
 using LojaProdutos.Services.Categoria;
 using LojaProdutos.Services.Produto;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LojaProdutos.Controllers
 {
+    [UsuarioLogado]
     public class ProdutoController : Controller
     {
         private readonly IProdutoInterface _produtoInterface;
@@ -16,18 +18,21 @@ namespace LojaProdutos.Controllers
             _categoriaInterface = categoriaInterface;
         }
 
+        [UsuarioLogadoAdm]
         public async Task<IActionResult> Index()
         {
             var produtos = await _produtoInterface.BuscarProdutos();
             return View(produtos);
         }
 
+        [UsuarioLogadoAdm]
         public async Task<IActionResult> Cadastrar()
         {
             ViewBag.Categorias = await _categoriaInterface.BuscarCategorias();
             return View();
         }
 
+        [UsuarioLogadoAdm]
         public async Task<IActionResult> Remover(int id)
         {
             var produto = await _produtoInterface.Remover(id);
@@ -40,6 +45,7 @@ namespace LojaProdutos.Controllers
             return View(produto);
         }
 
+        [UsuarioLogadoAdm]
         public async Task<IActionResult> Editar(int id)
         {
             var produto = await _produtoInterface.BuscarProdutoPorId(id);
@@ -60,6 +66,7 @@ namespace LojaProdutos.Controllers
         }
 
         [HttpPost]
+        [UsuarioLogadoAdm]
         public async Task<IActionResult> Cadastrar(CriarProdutoDto criarProdutoDto, IFormFile foto)
         {
             if (ModelState.IsValid)
@@ -77,6 +84,7 @@ namespace LojaProdutos.Controllers
         }
 
         [HttpPost]
+        [UsuarioLogadoAdm]
         public async Task<IActionResult> Editar(EditarProdutoDto editarProdutoDto, IFormFile? foto)
         {
             if (ModelState.IsValid)

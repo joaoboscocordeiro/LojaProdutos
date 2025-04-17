@@ -27,8 +27,8 @@ namespace LojaProdutos.Filtros
                 {
                     context.Result = new RedirectToRouteResult(new RouteValueDictionary
                     {
-                        { "controller", "Login" },
-                        { "action", "Login" }
+                        { "controller", "Home" },
+                        { "action", "Index" }
                     });
                 }
             }

@@ -11,15 +11,27 @@ namespace LojaProdutos.Filtros
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             string sessao = context.HttpContext.Session.GetString("usuarioSessao");
-            UsuarioModel usuarioModel = JsonConvert.DeserializeObject<UsuarioModel>(sessao);
 
-            if (usuarioModel.Cargo == CargoEnum.Cliente)
+            if (string.IsNullOrEmpty(sessao))
             {
                 context.Result = new RedirectToRouteResult(new RouteValueDictionary
+                {
+                    { "controller", "Login" },
+                    { "action", "Login" }
+                });
+            }
+            else
+            {
+                UsuarioModel usuarioModel = JsonConvert.DeserializeObject<UsuarioModel>(sessao);
+
+                if (usuarioModel.Cargo == CargoEnum.Cliente)
+                {
+                    context.Result = new RedirectToRouteResult(new RouteValueDictionary
                     {
                         { "controller", "Home" },
                         { "action", "Index" }
                     });
+                }
             }
 
             base.OnActionExecuting(context);

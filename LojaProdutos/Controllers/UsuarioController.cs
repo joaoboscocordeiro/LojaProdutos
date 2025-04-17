@@ -1,11 +1,14 @@
 ﻿using AutoMapper;
 using LojaProdutos.Dtos.Endereco;
 using LojaProdutos.Dtos.Usuario;
+using LojaProdutos.Filtros;
 using LojaProdutos.Services.Usuario;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LojaProdutos.Controllers
 {
+    [UsuarioLogado]
+    [UsuarioLogadoAdm]
     public class UsuarioController : Controller
     {
         private readonly IUsuarioInterface _usuarioInterface;

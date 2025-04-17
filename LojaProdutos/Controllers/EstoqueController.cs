@@ -1,10 +1,13 @@
 ﻿using ClosedXML.Excel;
+using LojaProdutos.Filtros;
 using LojaProdutos.Services.Estoque;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 
 namespace LojaProdutos.Controllers
 {
+
+    [UsuarioLogado]
     public class EstoqueController : Controller
     {
         private readonly IEstoqueInterface _estoqueInterface;
@@ -13,6 +16,8 @@ namespace LojaProdutos.Controllers
         {
             _estoqueInterface = estoqueInterface;
         }
+
+        [UsuarioLogadoAdm]
         public IActionResult Index()
         {
             var registros = _estoqueInterface.ListarRegistros();

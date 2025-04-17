@@ -1,14 +1,13 @@
 ﻿using LojaProdutos.Models;
 using Newtonsoft.Json;
-using System.Text.Json.Serialization;
 
 namespace LojaProdutos.Services.Sessao
 {
     public class SessaoService : ISessaoInterface
     {
-        private readonly HttpContextAccessor _ctx;
+        private readonly IHttpContextAccessor _ctx;
 
-        public SessaoService(HttpContextAccessor ctx)
+        public SessaoService(IHttpContextAccessor ctx)
         {
             _ctx = ctx;
         }
