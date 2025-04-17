@@ -11,5 +11,5 @@ Aplicação de Loja Produtos
 ----------------------------------------------------------------------------------------------------
 
 <div align-"center">
-  <img src="https://github.com/joaoboscocordeiro/LojaProdutos/issues/1#issue-3001149774" width="700px" />
+  <img src="https://github.com/joaoboscocordeiro/LojaProdutos/issues/1#issue-3001149774.png" width="700px" />
 </div>
